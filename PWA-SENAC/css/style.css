@@ -1,0 +1,72 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing:	border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:	border-box; 
+}
+
+body{
+	background-image: url(../imagens/backgroundhome.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+header{
+	text-align: center;
+	margin-top: 3%;
+}
+
+.logo{
+	width: 220px;
+	height: 130px;
+	margin-top: -2.5%;
+}
+
+form>p{
+	font-size: 1.5em;
+	color: white;
+}
+
+.dados{
+	width: 70%;
+	border-style: none;
+	border-bottom:0.5px white solid;
+	background-color: black;
+	text-align: center; 
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+input[type="email"]::-webkit-input-placeholder {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+input[type="password"]::-webkit-input-placeholder {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.remember_user{
+	text-align: center;
+	color: white;
+	font-family: 'Orbitron', sans-serif;
+	padding-top: 2%;
+}
+
+.botao{
+	width: 60%;
+	font-size: 1.5em;
+	color: white;
+	background-color: transparent;
+	margin-top: 3%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+

@@ -1,0 +1,26 @@
+{
+	"short_name": "Senac",
+	"name": "Portal Senac",
+	"icons": [
+{
+	"src": "/imagens/senac-logo48.png",
+	"type": "image/png",
+	"sizes": "48x48"
+} ,
+{
+	"src": "/imagens/senac-logo96.png",
+	"type": "image/png",
+	"sizes": "96x96"
+} ,
+{
+	"src": "/imagens/senac-logo192.png",
+	"type": "image/png",
+	"sizes": "192x192"
+} 
+	],
+
+	"start_url":"index.html?launcher=true",
+	"background_color": "#",
+    "display":"standalone"
+
+}

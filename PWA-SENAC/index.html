@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<title>Login</title>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="imagens/icone.png">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+
+<br><br>
+
+	<header>
+
+		<a href="index.html"><img class="logo" src="imagens/senac-logo2.png" alt="Logotipo do aplicativo"></a>
+
+	</header>
+
+	<main>
+
+		<h1 style="font-size: 1.5em; color: white; text-align: center; padding-top: 8%;">Bem Vindo<br> ao Portal SENAC</h1>
+
+
+		<form method="post" action="consulta_user.php">
+
+			<i style="color: white; padding-left: 5%; padding-top: 5%;" class="fa fa-user fa-2x"></i>
+
+				<input style="background-color: transparent; margin-top: -5%;" type="email" name="femail" placeholder="Email" class="dados"><br>
+
+			<i style="color: white; padding-left: 5%; padding-top: 5%;" class="fa fa-unlock fa-2x"></i>
+
+				<input style="background-color: transparent; margin-top: -5%;" type="password" name="fsenha" placeholder="Senha" class="dados"><br>
+
+			<div class="remember_user">
+
+				<label for="subscribeNews">Deseja lembrar seu usuário e senha?</label>
+
+				<input id="subscribeNews" type="checkbox" name="subscribe" value="newsletter">
+
+			</div>
+
+			<input type="submit" class="botao" value="Entrar">
+			
+		</form>
+
+	</main>
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

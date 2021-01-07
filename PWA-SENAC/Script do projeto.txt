@@ -1,0 +1,238 @@
+==============CRIANDO O BAN CO DO SENAC==============
+create database if not exists senac;
+
+====================================================================================
+CRIANDO TABELAS DO ALUNO COM CAMPO DE CADASTRO EMAIL SENHA E TURMA
+
+create table if not exists senac.aluno(
+email varchar(100) not null primary key,
+senha varchar(10) not null,
+turma varchar(4) not null);
+
+CADASTRANDO ALUNOS
+
+insert into senac.aluno (email, senha, turma) values
+('leollopes98@gmail.com', 1234567890, 'TI08'),
+('valdeci55@gmail.com', 1234567890, 'TI05');
+
+
+
+
+====================================================================================
+
+
+CRIANDO TABELA DE NOTAS
+
+create table if not exists senac.notas(
+email varchar(100) not null,
+descricao varchar(4) not null,
+mencao varchar(2) not null,
+aprovacao numeric(4),
+constraint notas primary key (email, descricao));
+
+
+######### Só insira as informações na tabela depois que criar as chaves estrangeiras#########
+
+
+#### A coluna de %CH-Aprovação será usada para coluna de resultado sendo
+que se for maior que 75% o aluno será aprovado se não reprovado ###
+
+
+=====================================================================================
+
+CRIANDO TABELA DE FALTAS
+
+create table if not exists senac.faltas(
+email varchar(100) not null,
+descricao varchar(4) not null,
+tp varchar(4) not null,
+tf varchar(4) not null);
+
+
+######### Só insira as informações na tabela depois que criar as chaves estrangeiras#########
+
+INSERINDO TOTAL DE PRESENÇA E TOTAL DE FALTA
+insert into senac.faltas (email, descricao, tp, tf) values 
+('leollopes98@gmail.com', 'UC01', 80, 4),
+('leollopes98@gmail.com', 'UC02', 90, 12),
+('leollopes98@gmail.com', 'UC03', 56, 16),
+('leollopes98@gmail.com', 'UC04', 28, 4),
+('leollopes98@gmail.com', 'UC05', 88, 8),
+('leollopes98@gmail.com', 'UC06', 84, 12),
+('leollopes98@gmail.com', 'UC07', 96, 0),
+('leollopes98@gmail.com', 'UC08', 16, 0),
+('leollopes98@gmail.com', 'UC09', 64, 8),
+('leollopes98@gmail.com', 'UC10', 0, 0),
+('leollopes98@gmail.com', 'UC11', 0, 0),
+('leollopes98@gmail.com', 'UC12', 88, 8),
+('leollopes98@gmail.com', 'UC13', 20, 0),
+('leollopes98@gmail.com', 'UC14', 100, 8),
+('leollopes98@gmail.com', 'UC15', 44, 4),
+('leollopes98@gmail.com', 'UC16', 4, 0),
+('valdeci55@gmail.com', 'UC01', 25, 55),
+('valdeci55@gmail.com', 'UC02', 25, 45),
+('valdeci55@gmail.com', 'UC03', 20, 35),
+('valdeci55@gmail.com', 'UC04', 26, 32),
+('valdeci55@gmail.com', 'UC05', 26, 32),
+('valdeci55@gmail.com', 'UC06', 48, 20),
+('valdeci55@gmail.com', 'UC07', 88, 12),
+('valdeci55@gmail.com', 'UC08', 84, 23),
+('valdeci55@gmail.com', 'UC09', 64, 22),
+('valdeci55@gmail.com', 'UC10', 68, 18);
+
+#### A coluna de %CH-Aprovação será usada para coluna de resultado sendo
+que se for maior que 75% o aluno será aprovado se não reprovado ###
+
+===================================================================================
+
+CRIANDO A TABELA CRONOGRAMA1
+
+CREATE TABLE IF NOT EXISTS senac.cronograma1(
+descricao varchar(14) not null,
+docente varchar(100) not null,
+inicio date not null,
+termino date not null,
+turma varchar(4) not null constraint pk_cronograma primary key (turma,descricao);
+
+INSERINDO INFORMAÇÕES DO CRONOGRAMA
+
+insert into senac.cronograma1 (descricao, docente, inicio, termino, turma) values 
+('UC01', 'Silvia Da Silvia', '2017-01-01', '2017-02-20', 'TI08'),
+('UC02', 'Silvia Da Silvia', '2017-02-21', '2017-03-05', 'TI08'),
+('UC03', 'Rafael Gomes', '2017-03-06' , '2017-04-15', 'TI08'),
+('UC04', 'Rafael Gomes', '2017-05-05', '2017-06-30', 'TI08'),
+('UC05', 'Rafale Gomes', '2017-09-15', '2017-11-05', 'TI08'),
+('UC06', 'Rafael Gomes', '2017-12-22', '2018-01-28', 'TI08'),
+('UC07', 'Rafael Gomes', '2018-02-05', '2018-04-30', 'TI08'),
+('UC08', 'Rafael Gomes', '2018-05-01', '2018-07-30', 'TI08'),
+('UC09', 'Paulo Valentin', '2018-05-01', '2018-07-30', 'TI08'),
+('UC10', 'Paulo Valentin', '2018-08-01', '2018-09-30', 'TI08'),
+('UC11', 'Paulo Valentin', '2018-10-01', '2018-11-15', 'TI08'),
+('UC12', 'Valdeci Matos', '2018-11-06', '2019-01-09', 'TI08'),
+('UC13', 'Valdeci Matos', '2019-03-01', '2019-05-30', 'TI08'),
+('UC14', 'Valdeci Matos', '2019-06-01', '2019-08-15', 'TI08'),
+('UC15', 'Fabio Souza', '2019-10-01', '2019-12-01', 'TI08'),
+('UC16', 'Fabio Souza', '2019-01-13', '2020-04-20', 'TI08'),
+('UC01', 'Ricardo Lopes', '2017-01-01', '2017-03-20', 'TI05'),
+('UC02', 'Ricardo Lopes', '2017-03-21', '2017-05-08', 'TI05'),
+('UC03', 'Samuel Rodrigues', '2017-05-09', '2017-08-15', 'TI05'),
+('UC04', 'Samuel Rodrigues', '2017-08-16', '2017-10-12', 'TI05'),
+('UC05', 'Izac Matis', '2017-10-13', '2017-12-03', 'TI05'),
+('UC06', 'Izac Matias', '2017-12-04', '2018-02-20', 'TI05'),
+('UC07', 'José Dutra', '2018-02-21', '2018-04-20', 'TI05'),
+('UC08', 'José Dutra', '2018-04-21', '2018-06-15', 'TI05'),
+('UC09', 'Paulo nascimento', '2018-06-016', '2017-02-20', 'TI05'),
+('UC10', 'Paulo nascimento', '2018-02-20', '2018-04-05', 'TI05');
+=============================================================================
+
+CRIANDO A TABELA DE GRADE CURRICULAR
+
+CREATE TABLE IF NOT EXISTS senac.gradecurricular(
+descricao varchar(4) not null,
+texto varchar(250) not null,
+cargah numeric(4) not null,
+turma varchar(4) not null,
+constraint gradecurricular primary key (turma, descricao));
+
+
+INSERINDO INFORAMÇÕES DA GRADE CURRICULAR
+
+insert into senac.gradecurricular (descricao, texto, cargah, turma) values
+('UC01', 'Planejar e executar a montagem de computadores.', 84, 'TI08'),
+('UC02', 'Planejar e executar a instalação de hadware e software para computadores.', 96, 'TI08'),
+('UC03', 'Planejar e executar a manutenção de computadores.', 72, 'TI08'),
+('UC04', 'Projeto Integrador de Assistente de Suporte e Manutenção de Computadores.', 30, 'TI08'),
+('UC05', 'Planejar e executar a instalação de redes locais de computadores.', 96, 'TI08'),
+('UC06', 'Planejar e exexutar a manutenção de redes locais de computadores.', 96, 'TI08'),
+('UC07', 'Planejar e executar a instalção, a configuração e o monitoramento de sistemas
+operacionais de rede locais servidores.', 96, 'TI08'),
+('UC08', 'Projeto Integrador Assistente de Operações de Redes de Computadores.', 15, 'TI08'),
+('UC09', 'Conceber, analisar e planejar o desenvolvimento de software.', 72, 'TI08'),
+('UC10', 'Executar os processos de codificação, manutenção e documentação de aplicativos computacionais
+para desktops.', 108, 'TI08'),
+('UC11', 'Executar os processos de codificação, manutenção e documentação de aplicativos computacionais 
+para dispositivos móveis', 108, 'TI08'),
+('UC12', 'Executar os processos de codificação, manutenção e documentação de aplicatrivos computacionais
+para internet.', 96, 'TI08'),
+('UC13', 'Executar teste e implantação de aplicativos computacionais.', 60, 'TI08'),
+('UC14', 'Desenvolver e organizar elementos estruturais de sites.', 108, 'TI08'),
+('UC15', 'Manipular e otimizar imagens vetoriais, bitmaps gráficos e elementos visuais de navegação web.', 48, 'TI08'),
+('UC01', 'Eletroeletrônica Aplicada.', 60, 'TI05'),
+('UC02', 'Montagem e Manutenção de Computaroes', 160, 'TI05'),
+('UC03', 'Ferramentas para Documentação Técnica', 120,  'TI05'),
+('UC04', 'Cabeamento Estruturado e Arquitetura de redes', 188, 'TI05'),
+('UC05', 'Comutação de Rede local', 120, 'TI05'),
+('UC06', 'Interconexão de Redes', 96, 'TI05'),
+('UC07', 'Gerenciamento e Monitoramento de Rede', 60, 'TI05'),
+('UC08', 'Servidores de Rede e Serviços de Rede.', 240, 'TI05'),
+('UC09', 'Serviços de Convergência e Segurança de Redes.', 96, 'TI05'),
+('UC10', 'Práticas Profissionais.', 200, 'TI05'); 
+======================================================================================
+
+
+CRIANDO A TABELA DE DADOS
+
+
+CREATE TABLE IF NOT EXISTS senac.dados(
+nome varchar (70) not null,
+data  date not null,
+email varchar (100) not null,
+rua varchar (100) not null,
+bairro varchar (100) not null,
+cidade varchar (50) not null,
+telefone varchar (14) not null,
+celular varchar (14) not null,
+turma varchar (4) not null,
+constraint dados primary key (email, turma));
+
+insert into senac.dados (nome, data, email, cidade, bairro, rua, telefone, celular, turma) values
+('Leonardo Lopes Da Silva', '1999-03-18', 'São Paulo', 'leollopes98@gmail.com', 'Vila Andrade', 'Nascente Virgosa', 1139999999,
+966660000, 'TI08'), 
+('Valdeci Matos Silva', '1955-07-22', 'São Paulo', 'valdeci55@gmail.com', 'Vila Napoli', 'Frei Caneca', 1138888888, 966668888, 'TI05');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================================================
+CRIANDO AS CHAVES ESTRANGEIRAS
+
+alter table senac.notas add constraint fk_notas foreign key (email) references senac.aluno (email);
+
+alter table senac.notas add constraint fk_faltas foreign key (descricao) references senac.faltas (descricao); (###### Não sei se ainda é necessário  ou se é########)
+
+
+alter table senac.faltas add constraint fk_faltas foreign key (email) references senac.aluno (email);
+
+alter table senac.faltas add constraint fk_notas foreign key (email) references senac.faltas (email);
+
+alter table senac.dados add constraint fk_dados key (email) references senac.aluno (email);
+
+
+
+
+
+
+
+
+
+
+
+ 

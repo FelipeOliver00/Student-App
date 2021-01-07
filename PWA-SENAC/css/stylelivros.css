@@ -1,0 +1,80 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing:	border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:	border-box; 
+}
+
+body{
+	background-image: url(../imagens/backgroundlivros2.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.logo2{
+	width: 220px;
+	height: 130px;
+	margin-top: -2%;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+table{
+	border-collapse: collapse;
+    width: 90%;
+    margin:0 auto;
+    margin-top: 30px;
+    border: 2px solid white;
+    opacity: 0.8;
+}
+
+td, th{
+	border: 1px solid #dddddd;
+    text-align: content: '';
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    vertical-align: middle;
+    height: 40px;
+}
+
+tr:nth-child(even){
+    background-color: #EEEEEE;
+}
+
+tr:nth-child(odd){
+    background-color: #BDBDBD;
+}
+
+.ebook1{
+	width: 65px;
+	height: 65px;
+	margin-top: 3%;
+}
+
+.ebook2{
+	width: 65px;
+	height: 65px;
+	margin-top: 3%;
+}
+.ebook3{
+	width: 65px;
+	height: 65px;
+	margin-top: 3%;
+}
+.ebook4{
+	width: 65px;
+	height: 65px;
+	margin-top: 3%;
+}
+
+.ebook5{
+	width: 65px;
+	height: 65px;
+	margin-top: 3%;
+}
+/*Fim da tela Livros*/
