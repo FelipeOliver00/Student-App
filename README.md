@@ -1,2 +1,2 @@
-# Student-App
+# App
 Increase Knowledge
